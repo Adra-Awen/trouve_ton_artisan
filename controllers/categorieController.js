@@ -1,9 +1,11 @@
 import { Categorie, Specialite } from "../models/index.js";
 
-// Récupérer les catégories et leurs spécialités associées
-export const getCategories = async (req, res) => {
+// Récupérer les catégories et leurs spécialités associées en fonction du slug
+export const getCategoriesBySlug = async (req, res) => {
     try {
+        const { slug } = req.params;
         const categories = await Categorie.findAll({
+            where: { slug },
             include: [{ model: Specialite }]
         });
         res.status(200).json(categories);
