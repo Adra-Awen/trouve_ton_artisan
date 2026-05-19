@@ -16,8 +16,8 @@ export const getTopEntreprises = async (req, res) => {
 
 // Récupérer les entreprises par Specialite ou Categorie
 export const getEntreprisesBySpecialite = async (req, res) => {
-    const { id_specialite } = req.params;
     try {
+        const { id_specialite } = req.params;
         const entreprises = await Entreprise.findAll({
             where: { id_specialite },
             include: [{ model: Specialite }]
@@ -46,3 +46,27 @@ export const getEntreprisesBySpecialite = async (req, res) => {
             res.status(500).json({ error: 'Une erreur est survenue lors de la récupération de l\'entreprise.' });
         }
     };
+
+    // Récupérer la Fiche Artisan (Détail de l'entreprise via son nom pour les URL)
+    export const getEntrepriseByName = async (req, res) => {
+    try {
+        const { nom_entreprise } = req.params;
+
+        const nomFormate = nom_entreprise.replace(/-/g, ' '); //Remplacer les espaces par des tirets pour correspondre au format de la base de données
+
+        const entreprise = await Entreprise.findOne({
+            where: { nom: nomFormate },
+            include: [{ model: Specialite }]
+        });
+
+        if (!entreprise) {
+            return res.status(404).json({ error: 'Artisan non trouvé.' });
+        }
+        res.status(200).json(entreprise);
+    } catch (error) {
+        console.error('Erreur lors de la récupération de l\'entreprise par nom :', error);
+        res.status(500).json({ error: 'Une erreur est survenue lors de la récupération de l\'entreprise.' });
+    }
+};
+
+    
