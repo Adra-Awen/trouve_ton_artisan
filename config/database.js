@@ -1,4 +1,4 @@
-import { Sequelize } from('sequelize');
+import { Sequelize } from 'sequelize';
 import 'dotenv/config';
 
 //Initialisation de la connexion à la base de données MySQL
@@ -13,15 +13,4 @@ const sequelize = new Sequelize(
     }
 );
 
-// Test de la connexion à la base de données
-const testConnection = async () => {
-    try {
-        await sequelize.authenticate();
-        console.log('Connexion à la base de données réussie !');
-    } catch (error) {
-        console.error('Impossible de se connecter à la base de données :', error);
-    }
-};
-
-testConnection();
-module.exports = sequelize;
+export default sequelize;

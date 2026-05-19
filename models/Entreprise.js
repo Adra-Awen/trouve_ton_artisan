@@ -28,11 +28,11 @@ const Entreprise = sequelize.define('Entreprise', {
         allowNull: false
     },
     email: {
-        type: DataTypes.VARCHAR(255),
+        type: DataTypes.STRING(255),
         allowNull: false
     },
     web: {
-        type: DataTypes.VARCHAR(255),
+        type: DataTypes.STRING(255),
         allowNull: true
     },
     top_entreprise: {
@@ -40,11 +40,11 @@ const Entreprise = sequelize.define('Entreprise', {
         allowNull: false
     },
     seo_title: {
-        type: DataTypes.VARCHAR(255),
+        type: DataTypes.STRING(255),
         allowNull: false
     },
     seo_description: {
-        type: DataTypes.VARCHAR(255),
+        type: DataTypes.STRING(255),
         allowNull: false
     },
     id_specialite: {

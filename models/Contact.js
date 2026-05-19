@@ -8,19 +8,19 @@ const Contact = sequelize.define('Contact', {
         autoIncrement: true
     },
     nom_expediteur: {
-        type: DataTypes.VARCHAR(100),
+        type: DataTypes.STRING(100),
         allowNull: false
     },
     prenom_expediteur: {
-        type: DataTypes.VARCHAR(100),
+        type: DataTypes.STRING(100),
         allowNull: false
     },
     email_expediteur: {
-        type: DataTypes.VARCHAR(100),
+        type: DataTypes.STRING(100),
         allowNull: false
     },
     code_postal: {
-        type: DataTypes.VARCHAR(5),
+        type: DataTypes.STRING(5),
         allowNull: false
     },
     message: {
