@@ -1,4 +1,4 @@
-import { Contact } from "../models";
+import { Contact } from "../models/index.js";
 
 // Envoyer un message et sauvegarder un message de contact dans la base de données
 export const createContactMessage = async (req, res) => {
