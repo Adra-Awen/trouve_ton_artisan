@@ -1,3 +1,25 @@
+// Police personnalisée Graphik
+@font-face {
+  font-family: 'Graphik';
+  src: url('../assets/fonts/Graphik-Regular-Trial.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('../assets/fonts/Graphik-Thin-Trial.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik';
+  src: url('../assets/fonts/Graphik-Bold-Trial.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
 // Couleurs personnalisées
 $dark-blue:#00497C;
 $light-blue:#0074C7;
@@ -5,3 +27,5 @@ $light-blue:#0074C7;
 $body-bg:#F1F8FC; // Couleur de fond du corps de la page
 $primary: $light-blue; // Couleur principale
 $dark: $dark-blue; // Couleur sombre pour le bloc de la page d'accueil "Comment trouver mon artisan?"
+
+$font-family-base: 'Graphik', sans-serif; // Police de base pour l'ensemble du projet
