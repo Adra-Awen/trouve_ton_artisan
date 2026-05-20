@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="container my-3">
       <Header />
-      {/* Autres composants et contenu de l'application */}
       <main className="container my-3 text-center">
       </main>
+      <Footer />
     </div>
   );
 }
