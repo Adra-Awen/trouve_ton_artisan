@@ -1,8 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Batiment from './pages/Batiment';
+import Fabrication from './pages/Fabrication';
+import Alimentation from './pages/Alimentation';
+import Services from './pages/Services';
 
 function App() {
   return (
@@ -18,6 +22,9 @@ function App() {
               } 
           />
           <Route path="/batiment" element={<Batiment />} />
+          <Route path="/fabrication" element={<Fabrication />} />
+          <Route path="/alimentation" element={<Alimentation />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
       </main>
       <Footer />

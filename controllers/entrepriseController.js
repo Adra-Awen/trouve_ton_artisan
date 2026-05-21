@@ -14,7 +14,7 @@ export const getTopEntreprises = async (req, res) => {
     }
 };
 
-// Récupérer les entreprises par Specialite ou Categorie
+// Récupérer les entreprises par Specialite 
 export const getEntreprisesBySpecialite = async (req, res) => {
     try {
         const { id_specialite } = req.params;
@@ -26,6 +26,24 @@ export const getEntreprisesBySpecialite = async (req, res) => {
     } catch (error) {
         console.error('Erreur lors de la récupération des entreprises :', error);
         res.status(500).json({ error: 'Une erreur est survenue lors de la récupération des entreprises.' });
+    }
+};
+
+// Récupérer les entreprises par Categorie (via la spécialité)
+export const getEntreprisesByCategorie = async (req, res) => {
+    try {
+        const { id_categorie } = req.params;
+        const entreprises = await Entreprise.findAll({
+            freezeTableName: true,
+            include: [{
+                model: Specialite,
+                where: { id_categorie }
+            }]
+        });
+        res.status(200).json(entreprises);
+    } catch (error) {
+        console.error('ERREUR DANS ENTREPRISE_CONTROLLER :', error);
+        res.status(500).json({ error: error.message });
     }
 };
 

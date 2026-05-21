@@ -12,3 +12,50 @@ body {
 footer {
     background-color: $body-bg !important;
 }
+
+// Titre des pages de catégories
+.h2-categorie {
+    display: inline-block;
+    text-align: left;
+    background-color: $light-blue;
+    color: white;
+    padding: 1.2rem;
+}
+
+// Carte artisan
+.artisan-card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    .artisan-image {
+        width: 140px;
+        height: auto;
+        object-fit: cover;
+        transform: scale(1.1); 
+    }
+}
+
+.link_artisan {
+    text-decoration: none;
+}
+
+// Styles pour les étoiles de notation
+.stars-container {
+    position: relative;
+    display: inline-block;
+    font-size: 1.8rem; 
+}
+
+.stars-empty {
+    color: #D3D3D3;
+}
+
+.stars-filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #0074C7;
+}
