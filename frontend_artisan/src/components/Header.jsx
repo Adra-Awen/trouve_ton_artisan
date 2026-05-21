@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 //Importation du logo et de l'icône de recherche
-import Logo from '../assets/logo.png';
+import Logo from '../assets/Logo.png';
 import loupe from '../assets/loupe.png';
 
 const Header = () => {
+    const location = useLocation(); // Hook pour obtenir le chemin actuel
+
     // State pour gérer l'ouverture du menu burger et de la barre de recherche en responsive
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isSearchOpen, setIsSearchOpen] = React.useState(false);
@@ -37,7 +39,7 @@ const Header = () => {
             
                 {/* Partie gauche : Le Logo / Titre */}
                 <div className="d-flex align-items-center">
-                    <Link to="/accueil" title="Accueil">
+                    <Link to="/" title="Accueil">
                         <img 
                                 src={Logo} 
                                 alt="Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes" 
