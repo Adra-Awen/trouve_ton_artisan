@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../assets/logo.png';
+import Logo from '../assets/Logo.png';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
                 
                     {/* Colonne 1 : logo */}
                     <div className="col-12 col-md-4 d-flex flex-column align-items-center align-items-md-start">
-                        <Link to="/accueil" title="Accueil">
+                        <Link to="/" title="Accueil">
                             <img 
                                 src={Logo} 
                                 alt="Trouve ton artisan ! avec la Région Auvergne-Rhône-Alpes" 
