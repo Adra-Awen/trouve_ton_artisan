@@ -6,6 +6,7 @@ import {
     getCategorieBySlug,
     getTopEntreprises,
     getEntreprisesBySpecialite,
+    getEntreprisesByCategorie,
     getEntrepriseByName,
     createContactMessage,
 
@@ -25,6 +26,7 @@ router.get("/specialites", getSpecialites);
 router.get("/categories/:slug", getCategorieBySlug);
 
 // Routes pour les entreprises
+router.get("/entreprises/categorie/:id_categorie", getEntreprisesByCategorie);
 router.get("/entreprises/top", getTopEntreprises);
 router.get("/entreprises/specialite/:id_specialite", getEntreprisesBySpecialite);
 router.get("/entreprises/:nom_entreprise", getEntrepriseByName);

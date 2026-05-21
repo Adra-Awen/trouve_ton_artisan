@@ -12,7 +12,7 @@ const Specialite = sequelize.define('Specialite', {
         allowNull: false,
     },
 }, {
-    tableName: 'specialites',
+    tableName: 'specialite',
     timestamps: false,
 });
 

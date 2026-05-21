@@ -51,12 +51,14 @@ const Entreprise = sequelize.define('Entreprise', {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'specialites',
+            model: 'specialite',
             key: 'id_specialite'
         }
-}, 
-  tableName: 'entreprise',
-  timestamps: false
+    }
+}, {
+    tableName: 'entreprise',
+    freezeTableName: true,
+    timestamps: false
 });
 
 export default Entreprise;
