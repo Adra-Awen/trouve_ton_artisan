@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ArtisanCard from './ArtisanCard';
+import { Link } from 'react-router-dom';
 
 const CategoriePage = ({ titre, idCategorie }) => {
 
@@ -44,6 +45,17 @@ const CategoriePage = ({ titre, idCategorie }) => {
                         />
                     </div>
                 ))}
+            </div>
+
+            {/*  Bouton retour à l'accueil/ */}
+            <div className="row mt-4">
+                <div className="col text-end">
+                    <Link
+                        to="/"
+                        className="btn btn-outline-primary p-3">
+                        Retour à l'accueil
+                    </Link>
+                </div>
             </div>
         </div>
     );
