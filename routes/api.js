@@ -7,6 +7,7 @@ import {
     getTopEntreprises,
     getEntreprisesBySpecialite,
     getEntreprisesByCategorie,
+    getEntrepriseById,
     getEntrepriseByName,
     createContactMessage,
 
@@ -29,7 +30,8 @@ router.get("/categories/:slug", getCategorieBySlug);
 router.get("/entreprises/categorie/:id_categorie", getEntreprisesByCategorie);
 router.get("/entreprises/top", getTopEntreprises);
 router.get("/entreprises/specialite/:id_specialite", getEntreprisesBySpecialite);
-router.get("/entreprises/:nom_entreprise", getEntrepriseByName);
+router.get("/entreprises/nom/:nom_entreprise", getEntrepriseByName);
+router.get("/entreprises/:id", getEntrepriseById);
 
 
 // Routes pour les contacts

@@ -57,5 +57,25 @@ footer {
     left: 0;
     overflow: hidden;
     white-space: nowrap;
-    color: #0074C7;
+    color: $light-blue;
 }
+
+.artisan-image-page {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+//Formulaire de contact
+
+.formulaire-contact {
+    .form-control {
+        background-color: rgba(0, 116, 199, 0.2);
+        margin-bottom: 1rem;
+    }
+
+    .form-control{
+        border-color: $light-blue;
+    }
+}
+
