@@ -34,6 +34,7 @@ function Artisan() {
             .then(data => setArtisan(data))
             .catch(error => console.error('Erreur lors de la récupération de l\'artisan :', error));
     }, [id]);
+    
 
     if (!artisan) {
         return <div>Chargement...</div>;

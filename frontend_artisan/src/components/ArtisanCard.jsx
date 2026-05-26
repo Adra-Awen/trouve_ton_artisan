@@ -28,7 +28,7 @@ const ArtisanCard = ({ id, image, nom, id_specialite, ville, note }) => {
 
     // Rendu de la carte
     return (
-        <Link className="link_artisan"to={`/artisan/${id}`}>
+        <Link className="link_artisan" to={`/${nom .toLowerCase() .normalize("NFD") .replace(/[\u0300-\u036f]/g,"") .replace(/\s+/g,"-")}`}>
             <div
                 className="card artisan-card border-0 p-3 mb-3 bg-white"
             >

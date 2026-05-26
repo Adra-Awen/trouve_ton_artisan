@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import erreur404 from '../assets/erreur404.jpg';
 
 function Page404 (){
+    useEffect(() => {
+        document.title = "Page introuvable | Trouve ton artisan"
+    })   
     return (
         <div className="container py-5 text-center">
             <h2 className="fw-bold mb-3">

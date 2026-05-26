@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom'
 
 
 function Cookies() {
+    useEffect(() => {
+        document.title = "Cookies | Trouve ton artisan"
+    })
     return (
         <div className="container py-5 text-start">
             <h2 className="h2-categorie fw-bold mb-4">
