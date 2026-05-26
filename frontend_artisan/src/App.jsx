@@ -10,6 +10,9 @@ import Alimentation from './pages/Alimentation';
 import Services from './pages/Services';
 import Artisan from './pages/Artisan';
 import TopArtisan from './components/TopArtisan';
+import DonneesPersonnelles from './pages/DonneesPersonnelles';
+import Cookies from './pages/Cookies';
+import Accessibilite from './pages/Accessibilite';
 import Page404 from './pages/NotFound'
 
 function App() {
@@ -22,8 +25,14 @@ function App() {
           <Route path="/batiment" element={<Batiment />} />
           <Route path="/fabrication" element={<Fabrication />} />
           <Route path="/alimentation" element={<Alimentation />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services" elemen
+          
+          
+          t={<Services />} />
           <Route path="/artisan/:id" element={<Artisan />} />
+          <Route path="/donnees-personnelles" element={<DonneesPersonnelles />} />
+          <Route path="/accessibilite" element={<Accessibilite />} />
+          <Route path="/cookies" element={<Cookies />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </main>
