@@ -2,6 +2,7 @@ import express from "express";
 
 //Import depuis controllers/index.js
 import { 
+    getAllEntreprises,
     getSpecialites, 
     getCategorieBySlug,
     getTopEntreprises,
@@ -27,11 +28,12 @@ router.get("/specialites", getSpecialites);
 router.get("/categories/:slug", getCategorieBySlug);
 
 // Routes pour les entreprises
-router.get("/entreprises/categorie/:id_categorie", getEntreprisesByCategorie);
+router.get("/entreprises", getAllEntreprises);
 router.get("/entreprises/top", getTopEntreprises);
+router.get("/entreprises/categorie/:id_categorie", getEntreprisesByCategorie);
 router.get("/entreprises/specialite/:id_specialite", getEntreprisesBySpecialite);
-router.get("/entreprises/nom/:nom_entreprise", getEntrepriseByName);
 router.get("/entreprises/:id", getEntrepriseById);
+router.get("/entreprises/nom/:nom_entreprise", getEntrepriseByName);
 
 
 // Routes pour les contacts
