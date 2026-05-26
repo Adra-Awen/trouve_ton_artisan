@@ -32,9 +32,8 @@ router.get("/entreprises", getAllEntreprises);
 router.get("/entreprises/top", getTopEntreprises);
 router.get("/entreprises/categorie/:id_categorie", getEntreprisesByCategorie);
 router.get("/entreprises/specialite/:id_specialite", getEntreprisesBySpecialite);
-router.get("/entreprises/:id", getEntrepriseById);
 router.get("/entreprises/nom/:nom_entreprise", getEntrepriseByName);
-
+router.get("/entreprises/:id", getEntrepriseById);
 
 // Routes pour les contacts
 router.post("/contacts", createContactMessage);

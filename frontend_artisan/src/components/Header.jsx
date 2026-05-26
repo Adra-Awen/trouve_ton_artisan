@@ -15,7 +15,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isSearchOpen, setIsSearchOpen] = React.useState(false);
 
-    // Fonction pour basculer l'état du menu burger
+    // Fonction pour basculer l'état du menu bugrger
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };

@@ -6,7 +6,7 @@ import FormulaireContact from '../components/FormulaireContact';
 
 // Page de détails d'un artisan
 function Artisan() {
-    const { id } = useParams();
+    const { nom } = useParams();
     const [artisan, setArtisan] = useState(null);
 
     const noteSafe = artisan?.note || 0;
@@ -29,11 +29,11 @@ function Artisan() {
 
     useEffect(() => {
         // Récupérer les détails de l'artisan depuis le backend
-        fetch(`http://localhost:3000/entreprises/${id}`)
+        fetch(`http://localhost:3000/entreprises/nom/${nom}`)
             .then(response => response.json())
             .then(data => setArtisan(data))
             .catch(error => console.error('Erreur lors de la récupération de l\'artisan :', error));
-    }, [id]);
+    }, [nom]);
     
 
     if (!artisan) {
