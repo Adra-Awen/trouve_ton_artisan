@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ArtisanCard = ({ image, nom, id_specialite, ville, note }) => {
+const ArtisanCard = ({ id, image, nom, id_specialite, ville, note }) => {
 
     // Sécurité pour la note (conversion forcée + valeur de secours)
     const noteSafe = Number(note) || 0;
@@ -28,7 +28,7 @@ const ArtisanCard = ({ image, nom, id_specialite, ville, note }) => {
 
     // Rendu de la carte
     return (
-        <Link className="link_artisan"to={`/artisan/${nom}`}>
+        <Link className="link_artisan"to={`/artisan/${id}`}>
             <div
                 className="card artisan-card border-0 p-3 mb-3 bg-white"
             >
