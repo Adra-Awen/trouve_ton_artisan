@@ -3,11 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Accueil from './pages/Accueil'
 import Batiment from './pages/Batiment';
 import Fabrication from './pages/Fabrication';
 import Alimentation from './pages/Alimentation';
 import Services from './pages/Services';
 import Artisan from './pages/Artisan';
+import TopArtisan from './components/TopArtisan';
 
 function App() {
   return (
@@ -15,13 +17,7 @@ function App() {
       <Header />
       <main className="container my-3 text-center">
         <Routes>
-          <Route 
-              path="/" 
-              element={
-                <div className="text-center py-5">
-                </div>
-              } 
-          />
+          <Route path="/" element={<Accueil/>} />
           <Route path="/batiment" element={<Batiment />} />
           <Route path="/fabrication" element={<Fabrication />} />
           <Route path="/alimentation" element={<Alimentation />} />
