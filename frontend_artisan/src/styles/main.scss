@@ -5,8 +5,99 @@ body {
     background-color: $body-bg;
 }
 
+//HEADER
 .bg-header {
     background-color: $body-bg;
+}
+
+.header-link {
+    font-size: 1.1rem;
+    transition:
+        color 0.2s ease,
+        font-weight 0.1s ease;
+    &:hover,
+    &.active {
+        font-weight: 600 !important;
+        color: $light-blue !important;
+    }
+}
+
+.logo-header {
+    height: auto;
+    max-height: clamp(
+        150px,
+        10vw,
+        320px
+    );
+    min-width: 140px;
+}
+
+@media (max-width: 991px){
+    .logo-header{
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 768px){
+    .logo-header{
+        max-height: 80px;
+    }
+}
+
+//Barre de recherche
+.search-input-desktop {
+    width: 180px;
+    background-color: #E5E9EC;
+    padding-right: 30px;
+}
+
+.search-input-mobile {
+    background-color: #E5E9EC;
+    padding-right: 35px;
+}
+
+.search-icon-desktop {
+    max-height: 16px;
+    width: auto;
+    pointer-events: none;
+}
+
+.search-icon-mobile {
+    max-height: 24px;
+    width: auto;
+}
+
+.search-button-mobile {
+    font-size: 1.4rem;
+    color: $light-blue;
+}
+
+.result-search {
+    transition:
+        background-color .2s;
+    &:hover {
+        background-color:
+        rgba(0, 116, 199, 0.1);
+    }
+}
+
+//menu burger
+.burger-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.burger-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    margin-top: -1px;
+}
+
+.search-mobile-panel {
+    top: 100%;
+    z-index: 1050;
+    background-color: #F8FBFD;
 }
 
 footer {
@@ -14,7 +105,6 @@ footer {
 }
 
 //Carousel page d'accueil
-
 #carouselInfos {
     .carousel-inner {
         min-height: 450px;

@@ -5,6 +5,9 @@ import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Logo.png';
 import loupe from '../assets/loupe.png';
 
+//Importation de la barre de recherche
+import BarreRecherche from './BarreRecherche';
+
 const Header = () => {
     const location = useLocation(); // Hook pour obtenir le chemin actuel
 
@@ -24,17 +27,6 @@ const Header = () => {
 
     return (
         <header className="bg-header py-3 px-3 position-relative">
-            <style>{`
-                .header-link {
-                font-size: 1.1rem;
-                transition: color 0.2s ease, font-weight 0.1s ease;
-                }
-                .header-link:hover, 
-                .header-link.active {
-                font-weight: 600 !important;
-                color: #00497C !important;
-                }
-            `}</style>
             <div className="container d-flex align-items-center">
             
                 {/* Partie gauche : Le Logo / Titre */}
@@ -42,27 +34,10 @@ const Header = () => {
                     <Link to="/" title="Accueil">
                         <img 
                                 src={Logo} 
-                                alt="Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes" 
-                                style={{
-                                    height: 'auto',
-                                    maxHeight: 'clamp(150px, 10vw, 320px)', // Ajustement dynamique de la taille du logo 
-                                    minWidth: '140px',
-                                }}
+                                alt="Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
+                                className="logo-header" 
                             />
                     </Link>
-                    
-                    <style>{`
-                        @media (min-width: 992px) {
-                            img {
-                                --logo-height: 200px;
-                            }
-                        }
-                        @media (min-width: 768px) {
-                            img {
-                                --logo-height: 80px;
-                            }
-                        }
-                    `}</style>
                 </div>
 
                 {/* Partie centrale : Menu Desktop*/}
@@ -80,29 +55,16 @@ const Header = () => {
                     {/* Desktop : Barre de recherche */}
                     <div className="d-none d-lg-flex align-items-center gap-2">
                         <span className="text-secondary small">Rechercher</span>
-                    <div className="position-relative d-flex align-items-center">
-                    <input 
-                        type="text" 
-                        className="form-control form-control-sm border-0 rounded-3 bg-light-grey" 
-                        style={{ width: '180px', backgroundColor: '#E5E9EC', paddingRight: '30px' }} 
-                    />
-                    <img 
-                        src={loupe} 
-                        alt="" 
-                        className="position-absolute end-0 me-2" 
-                        style={{ maxHeight: '16px', pointerEvents: 'none' }}
-                    />
-                    </div>
+                        <BarreRecherche/>
                     </div>
 
                     {/* Responsive : Icône de recherche */}
                     <button className="btn p-1 border-0 d-lg-none" onClick={toggleSearch} aria-label="Rechercher">
-                        <span style={{ fontSize: '1.4rem', color: '#00497C' }}>
+                        <span>
                             <img 
                                 src={loupe} 
                                 alt="Rechercher icône loupe" 
-                                className="img-fluid" 
-                                style={{ maxHeight: '24px', width: 'auto' }}
+                                className="img-fluid search-icon-mobile" 
                             />
                         </span>
                     </button>
@@ -113,10 +75,10 @@ const Header = () => {
                         aria-label="Menu"
                         onClick={toggleMenu}
                     >
-                        <span style={{ fontSize: '1.5rem', lineHeight: '1', fontWeight: 'bold' }}>
+                        <span className="burger-icon">
                             {isMenuOpen ? '✕' : '☰'} {/*Change l'icône en fonction de l'état du menu*/}
                         </span>
-                        <span style={{ fontSize: '0.65rem', textTransform: 'uppercase', fontWeight: 'normal', marginTop: '-1px' }}>
+                        <span className="burger-label">
                             {isMenuOpen ? 'Fermer' : 'Menu'}</span>
                     </button>
                 </div>
@@ -125,20 +87,12 @@ const Header = () => {
             {/* Responsive : Barre de recherche */}
             {isSearchOpen && (
                 <div 
-                    className="position-absolute start-0 w-100 bg-header border-top d-lg-none shadow-lg p-3" 
-                    style={{ top: '100%', zIndex: 1050, backgroundColor: '#F8FBFD' }}
+                    className="position-absolute start-0 w-100 border-top d-lg-none p-3" 
                 >
                     <div className="d-flex align-items-center gap-2 container">
                         <span className="text-secondary small">Rechercher</span>
-                        <div className="position-relative d-flex align-items-center flex-grow-1">
-                            <input 
-                                type="text" 
-                                placeholder="Votre recherche..."
-                                className="form-control border-0 rounded-3 w-100" 
-                                style={{ backgroundColor: '#E5E9EC', paddingRight: '35px' }} 
-                                autoFocus // Ouverture automatique du clavier sur mobile
-                            />
-                            <img src={loupe} alt="" className="position-absolute end-0 me-3" style={{ maxHeight: '18px' }} />
+                        <div className="flex-grow-1">
+                            <BarreRecherche mobile onClose={() => setIsSearchOpen(false)}/>
                         </div>
                     </div>
                 </div>

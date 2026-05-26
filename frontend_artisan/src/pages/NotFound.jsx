@@ -12,7 +12,7 @@ function Page404 (){
             <img 
                 src={erreur404}
                 alt="Page introuvable"
-                className= "404 img-fluid mb-4 image-404"
+                className= "img-fluid mb-4 image-404"
             />
             {/*  Bouton retour à l'accueil/ */}
             <div className="row mt-4">

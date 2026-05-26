@@ -25,10 +25,7 @@ function App() {
           <Route path="/batiment" element={<Batiment />} />
           <Route path="/fabrication" element={<Fabrication />} />
           <Route path="/alimentation" element={<Alimentation />} />
-          <Route path="/services" elemen
-          
-          
-          t={<Services />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/artisan/:id" element={<Artisan />} />
           <Route path="/donnees-personnelles" element={<DonneesPersonnelles />} />
           <Route path="/accessibilite" element={<Accessibilite />} />

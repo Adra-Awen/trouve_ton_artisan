@@ -1,5 +1,19 @@
 import { Entreprise, Specialite } from "../models/index.js";
 
+
+//Récupérer toutes les entreprises
+export const getAllEntreprises = async (req, res) => {
+    try {
+        const entreprises =
+            await Entreprise.findAll();
+        res.status(200).json(entreprises);
+    }
+    catch(error){
+        console.error(error);
+        res.status(500).json(error);
+    }
+};
+
 // Récupérer les artisans du mois (Top Entreprises)
 export const getTopEntreprises = async (req, res) => {
     try {
@@ -85,6 +99,4 @@ export const getEntreprisesByCategorie = async (req, res) => {
         console.error('Erreur lors de la récupération de l\'entreprise par nom :', error);
         res.status(500).json({ error: 'Une erreur est survenue lors de la récupération de l\'entreprise.' });
     }
-};
-
-    
+};    
