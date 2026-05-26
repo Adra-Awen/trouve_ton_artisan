@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import TopArtisan from '../components/TopArtisan';
 
@@ -9,6 +9,9 @@ import recherche from "../assets/recherche.jpg";
 
 // carousel : explication des étapes
 function Accueil(){
+    useEffect(() => {
+        document.title = "Accueil | Trouve ton artisan"
+    })  
     const slides = [
         {
             image: recherche,
