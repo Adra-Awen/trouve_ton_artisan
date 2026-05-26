@@ -10,6 +10,7 @@ import Alimentation from './pages/Alimentation';
 import Services from './pages/Services';
 import Artisan from './pages/Artisan';
 import TopArtisan from './components/TopArtisan';
+import Page404 from './pages/NotFound'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/alimentation" element={<Alimentation />} />
           <Route path="/services" element={<Services />} />
           <Route path="/artisan/:id" element={<Artisan />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </main>
       <Footer />
