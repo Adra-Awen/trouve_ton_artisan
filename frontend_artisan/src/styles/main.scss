@@ -100,8 +100,30 @@ body {
     background-color: #F8FBFD;
 }
 
+//Footer
 footer {
     background-color: $body-bg !important;
+}
+
+.footer-logo {
+    height: auto;
+    width: clamp(
+        180px, 18vw, 300px
+    );
+    min-width: 160px;
+    margin-bottom: 1rem;
+}
+
+.footer-title {
+    font-size: 1.1rem;
+}
+
+.footer-link {
+    transition: color 0.2s ease;
+    &:hover {
+        color: $light-blue !important;
+        text-decoration: underline !important;
+    }
 }
 
 //Carousel page d'accueil

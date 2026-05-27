@@ -14,21 +14,16 @@ const Footer = () => {
                     <div className="col-12 col-md-4 d-flex flex-column align-items-center align-items-md-start">
                         <Link to="/" title="Accueil">
                             <img 
+                                className="footer-logo"
                                 src={Logo} 
                                 alt="Logo Trouve ton artisan ! avec la Région Auvergne-Rhône-Alpes" 
-                                style={{
-                                    height: 'auto',
-                                    width: 'clamp(180px, 18vw, 300px)',
-                                    minWidth: '160px',
-                                    marginBottom: '1rem'
-                                }}
                             />
                         </Link>
                     </div>
 
                     {/* Colonne 2 : adresse */}
                     <div className="col-12 col-sm-6 col-md-4">
-                        <h3 className="h6 fw-bold text-dark mb-3" style={{ fontSize: '1.1rem' }}>Adresse</h3>
+                        <h3 className="h6 fw-bold text-dark mb-3 footer-title">Adresse</h3>
                         <address className="text-secondary small lh-base m-0">
                             101 cours Charlemagne<br />
                             CS 20033<br />
@@ -41,7 +36,7 @@ const Footer = () => {
 
                     {/* Colonne 3 : liens mentions légales */}
                     <div className="col-12 col-sm-6 col-md-4">
-                        <h3 className="h6 fw-bold text-dark mb-3" style={{ fontSize: '1.1rem' }}>Mentions légales</h3>
+                        <h3 className="h6 fw-bold text-dark mb-3" footer-title>Mentions légales</h3>
                         <ul className="list-unstyled d-flex flex-column gap-2 m-0">
                             <li>
                                 <Link to="/donnees-personnelles" title="Données personnelles" className="text-decoration-none text-secondary small footer-link">
@@ -62,17 +57,6 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-
-            {/* survol des liens du footer */}
-            <style>{`
-                .footer-link {
-                transition: color 0.2s ease;
-                }
-                .footer-link:hover {
-                color: #00497C !important;
-                text-decoration: underline !important;
-                }
-            `}</style>
         </footer>
     );
 };
