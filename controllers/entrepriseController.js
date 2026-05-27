@@ -84,12 +84,14 @@ export const getEntreprisesByCategorie = async (req, res) => {
     try {
         const { nom_entreprise } = req.params;
 
-        const nomFormate = nom_entreprise.replace(/-/g, ' '); //Remplacer les espaces par des tirets pour correspondre au format de la base de données
-
-        const entreprise = await Entreprise.findOne({
-            where: { nom: nomFormate },
+        const entreprises = await Entreprise.findAll({
             include: [{ model: Specialite }]
         });
+        
+        const entreprise = entreprises.find (
+            entreprise => entreprise.nom .toLowerCase() .normalize("NFD") .replace( /[\u0300-\u036f]/g,"") .replace(/\s+/g,"-")
+            === nom_entreprise
+        );
 
         if (!entreprise) {
             return res.status(404).json({ error: 'Artisan non trouvé.' });

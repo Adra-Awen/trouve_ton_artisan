@@ -15,7 +15,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const [isSearchOpen, setIsSearchOpen] = React.useState(false);
 
-    // Fonction pour basculer l'état du menu burger
+    // Fonction pour basculer l'état du menu bugrger
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
@@ -34,7 +34,7 @@ const Header = () => {
                     <Link to="/" title="Accueil">
                         <img 
                                 src={Logo} 
-                                alt="Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
+                                alt="Logo Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
                                 className="logo-header" 
                             />
                     </Link>

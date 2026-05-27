@@ -15,7 +15,7 @@ const Footer = () => {
                         <Link to="/" title="Accueil">
                             <img 
                                 src={Logo} 
-                                alt="Trouve ton artisan ! avec la Région Auvergne-Rhône-Alpes" 
+                                alt="Logo Trouve ton artisan ! avec la Région Auvergne-Rhône-Alpes" 
                                 style={{
                                     height: 'auto',
                                     width: 'clamp(180px, 18vw, 300px)',
