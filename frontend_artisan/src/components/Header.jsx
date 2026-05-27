@@ -34,7 +34,7 @@ const Header = () => {
                     <Link to="/" title="Accueil">
                         <img 
                                 src={Logo} 
-                                alt="Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
+                                alt="Logo Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
                                 className="logo-header" 
                             />
                     </Link>

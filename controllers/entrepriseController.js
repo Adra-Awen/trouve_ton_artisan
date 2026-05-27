@@ -88,7 +88,7 @@ export const getEntreprisesByCategorie = async (req, res) => {
             include: [{ model: Specialite }]
         });
         
-        const entreprises = entreprise.find (
+        const entreprise = entreprises.find (
             entreprise => entreprise.nom .toLowerCase() .normalize("NFD") .replace( /[\u0300-\u036f]/g,"") .replace(/\s+/g,"-")
             === nom_entreprise
         );
