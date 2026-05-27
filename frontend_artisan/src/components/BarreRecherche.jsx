@@ -9,7 +9,7 @@ function BarreRecherche({ mobile = false, onClose = ()=>{}}) {
 
     // Charger tous les artisans depuis l'API
     useEffect(() => {
-        fetch('http://localhost:3000/entreprises')
+        fetch(`${import.meta.env.VITE_API_URL}/entreprises`)
             .then(response => response.json())
             .then(data => {
                 setArtisans(

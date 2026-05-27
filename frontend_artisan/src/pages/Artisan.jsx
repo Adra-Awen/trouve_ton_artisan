@@ -30,7 +30,7 @@ function Artisan() {
 
     useEffect(() => {
         // Récupérer les détails de l'artisan depuis le backend
-        fetch(`http://localhost:3000/entreprises/nom/${nom}`)
+        fetch(`${import.meta.env.VITE_API_URL}/entreprises/nom/${nom}`)
             .then(response => response.json())
             .then(data => setArtisan(data))
             .catch(error => console.error('Erreur lors de la récupération de l\'artisan :', error));

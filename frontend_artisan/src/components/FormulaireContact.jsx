@@ -31,7 +31,7 @@ function FormulaireContact({ artisan }) {
 
         // Envoyer les données du formulaire au backend
         try {
-            const response = await fetch('http://localhost:3000/contacts', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/contacts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
