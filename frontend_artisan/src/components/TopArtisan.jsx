@@ -7,7 +7,7 @@ import ArtisanCard from './ArtisanCard';
 function TopArtisans () {
     const [artisans, setArtisans] = useState([]);    
     useEffect(() => {
-        fetch('http://localhost:3000/entreprises/top')
+        fetch(`${import.meta.env.VITE_API_URL}/entreprises/top`)
             .then(response => response.json())
             .then(data => {
                 {/*Vérification des données dans un tableau*/}

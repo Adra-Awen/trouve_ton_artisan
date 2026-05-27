@@ -9,7 +9,6 @@ import Fabrication from './pages/Fabrication';
 import Alimentation from './pages/Alimentation';
 import Services from './pages/Services';
 import Artisan from './pages/Artisan';
-import TopArtisan from './components/TopArtisan';
 import DonneesPersonnelles from './pages/DonneesPersonnelles';
 import Cookies from './pages/Cookies';
 import Accessibilite from './pages/Accessibilite';

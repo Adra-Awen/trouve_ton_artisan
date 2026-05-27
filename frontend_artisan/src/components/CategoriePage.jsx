@@ -8,7 +8,7 @@ const CategoriePage = ({ titre, idCategorie }) => {
 
 // Récupération des artisans de la catégorie
     useEffect(() => {
-        fetch(`http://localhost:3000/entreprises/categorie/${idCategorie}`)
+        fetch(`${import.meta.env.VITE_API_URL}/entreprises/categorie/${idCategorie}`)
             .then(response => response.json())
             .then(data => {
                 setArtisans(Array.isArray(data) ? data : []);

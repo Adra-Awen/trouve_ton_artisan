@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 
-import { Link } from 'react-router-dom';
-
 // Composant de formulaire de contact pour les artisans
 // Contacter directement l'artisan en envoyant le message 
 // directement à l'adresse email de l'artisan
@@ -33,7 +31,7 @@ function FormulaireContact({ artisan }) {
 
         // Envoyer les données du formulaire au backend
         try {
-            const response = await fetch('http://localhost:3000/contacts', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL}/contacts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

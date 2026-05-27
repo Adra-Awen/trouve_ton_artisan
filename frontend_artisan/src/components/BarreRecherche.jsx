@@ -9,7 +9,7 @@ function BarreRecherche({ mobile = false, onClose = ()=>{}}) {
 
     // Charger tous les artisans depuis l'API
     useEffect(() => {
-        fetch('http://localhost:3000/entreprises')
+        fetch(`${import.meta.env.VITE_API_URL}/entreprises`)
             .then(response => response.json())
             .then(data => {
                 setArtisans(
@@ -74,7 +74,7 @@ function BarreRecherche({ mobile = false, onClose = ()=>{}}) {
             {/*Proposition du nom de l'artisan et de sa page au click*/}
             {
                 resultats.length > 0 && (
-                <div className="position-absolute top-100 start-0 bg-white shadow rounded mt-1 w-100 z-3">
+                <div className="position-absolute top-100 start-0 bg-white shadow rounded mt-1 w-100 z-3 p-3">
                     { resultats.map(
                         artisan => (
                         <Link
