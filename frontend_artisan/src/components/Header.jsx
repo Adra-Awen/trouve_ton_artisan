@@ -35,7 +35,8 @@ const Header = () => {
                         <img 
                                 src={Logo} 
                                 alt="Logo Trouve ton artisan ! Avec la région Auvergne-Rhône-Alpes"
-                                className="logo-header" 
+                                className="logo-header"
+                                aria-label="Aller sur la page d'accueil" 
                             />
                     </Link>
                 </div>
@@ -65,6 +66,7 @@ const Header = () => {
                                 src={loupe} 
                                 alt="Rechercher icône loupe" 
                                 className="img-fluid search-icon-mobile" 
+                                aria-label="Ouvrir la barre de recherche"
                             />
                         </span>
                     </button>
