@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 
-import { Link } from 'react-router-dom';
-
 // Composant de formulaire de contact pour les artisans
 // Contacter directement l'artisan en envoyant le message 
 // directement à l'adresse email de l'artisan
