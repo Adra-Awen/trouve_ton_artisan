@@ -79,7 +79,7 @@ function BarreRecherche({ mobile = false, onClose = ()=>{}}) {
                         artisan => (
                         <Link
                             key={ artisan.id_entreprise }
-                            to={`/artisan/${artisan.id_entreprise}`}
+                            to={`/${ artisan.nom .trim() .toLowerCase() .normalize("NFD") .replace(/[\u0300-\u036f]/g,"") .replace(/[^a-z0-9\s-]/g,"") .replace(/\s+/g,"-") }`} 
                             className="d-block p-2 text-dark text-decoration-none border-bottom result-search"
                             onClick={()=>{
                                 setRecherche('');
