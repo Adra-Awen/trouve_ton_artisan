@@ -1,4 +1,4 @@
-import { Entreprise, Specialite } from "../models/index.js";
+import { Entreprise, Specialite, Categorie } from "../models/index.js";
 
 
 //Récupérer toutes les entreprises
@@ -20,7 +20,7 @@ export const getTopEntreprises = async (req, res) => {
     try {
         const entreprises = await Entreprise.findAll({
             where: { top_entreprise: true },
-            include: [{ model: Specialite }]
+            include: [{ model: Specialite, as: "Specialite"}]
         });
         res.status(200).json(entreprises);
     } catch (error) {
@@ -35,7 +35,7 @@ export const getEntreprisesBySpecialite = async (req, res) => {
         const { id_specialite } = req.params;
         const entreprises = await Entreprise.findAll({
             where: { id_specialite },
-            include: [{ model: Specialite }]
+            include: [{ model: Specialite, as: "Specialite" }]
         });
         res.status(200).json(entreprises);
     } catch (error) {
@@ -52,6 +52,7 @@ export const getEntreprisesByCategorie = async (req, res) => {
             freezeTableName: true,
             include: [{
                 model: Specialite,
+                as: "Specialite",
                 where: { id_categorie }
             }]
         });
@@ -67,7 +68,7 @@ export const getEntreprisesByCategorie = async (req, res) => {
         try {
             const { id} = req.params;
             const entreprise = await Entreprise.findByPk(id, {
-                include: [{ model: Specialite }]
+                include: [{ model: Specialite, as: "Specialite" }]
             });
 
             if (!entreprise) {
@@ -86,8 +87,17 @@ export const getEntreprisesByCategorie = async (req, res) => {
         const { nom_entreprise } = req.params;
 
         const entreprises = await Entreprise.findAll({
-            include: [{ model: Specialite }]
-        });
+            include: [
+            {
+                model: Specialite,
+                as: "Specialite",
+                include: [{ 
+                    model: Categorie, 
+                    as: "Categorie"}
+                ]
+            }
+        ]}
+    );
         
         const entreprise = entreprises.find (
             entreprise => entreprise.nom .toLowerCase() .normalize("NFD") .replace( /[\u0300-\u036f]/g,"") .replace(/[^a-z0-9\s-]/g, "") .replace(/\s+/g,"-")

@@ -5,8 +5,8 @@ import Specialite from "./Specialite.js";
 
 // Définir les associations entre les modèles
 // Une Categorie peut avoir plusieurs Specialite
-Categorie.hasMany(Specialite, { foreignKey: 'id_categorie' });
-Specialite.belongsTo(Categorie, { foreignKey: 'id_categorie' });
+Categorie.hasMany(Specialite, { foreignKey: 'id_categorie', as : 'Specialites' });
+Specialite.belongsTo(Categorie, { foreignKey: 'id_categorie', as : 'Categorie'});
 
 //Une Specialite peut avoir plusieurs Entreprise
 Specialite.hasMany(Entreprise, { foreignKey: 'id_specialite', as : 'Entreprises' });
@@ -16,9 +16,6 @@ Entreprise.belongsTo(Specialite, { foreignKey: 'id_specialite', as : 'Specialite
 Entreprise.hasMany(Contact, { foreignKey: 'id_entreprise' });
 Contact.belongsTo(Entreprise, { foreignKey: 'id_entreprise' });
 
-// Synchroniser les modèles avec la base de données
-Entreprise.belongsTo(Specialite, { foreignKey: 'id_specialite' });
-Specialite.hasMany(Entreprise, { foreignKey: 'id_specialite' });
 
 export {
     Categorie,

@@ -89,7 +89,7 @@ const Header = () => {
             {/* Responsive : Barre de recherche */}
             {isSearchOpen && (
                 <div 
-                    className="position-absolute start-0 w-100 border-top d-lg-none p-3" 
+                    className="position-absolute start-0 w-100 border-top d-lg-none p-3 bg-white" 
                 >
                     <div className="d-flex align-items-center gap-2 container">
                         <span className="text-secondary small">Rechercher</span>

@@ -23,9 +23,14 @@
 // Couleurs personnalisées
 $dark-blue:#00497C;
 $light-blue:#0074C7;
+$red: #cd2c2e;
+$green: #82b864;
 
 $body-bg:#F1F8FC; // Couleur de fond du corps de la page
 $primary: $light-blue; // Couleur principale
 $dark: $dark-blue; // Couleur sombre pour le bloc de la page d'accueil "Comment trouver mon artisan?"
+$success: $green; // Couleur du message de succès à l'envoi du formulaire
+$warning: $red; // Couleur pour messages importants
+
 
 $font-family-base: 'Graphik', sans-serif; // Police de base pour l'ensemble du projet

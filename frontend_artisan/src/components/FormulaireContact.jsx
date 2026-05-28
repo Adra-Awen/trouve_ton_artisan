@@ -77,23 +77,28 @@ function FormulaireContact({ artisan }) {
             <form onSubmit={handleSubmit}>
                 <div className="row g-3">
                     <div className="col-12 col-lg-12 pb-4">
-                        <label className="form-label">Nom</label>
+                        <label className="form-label">Nom<span className="text-warning">*</span></label>
                         <input id="nom" name="nom_expediteur" type="text" className="form-control rounded-4 p-3" placeholder="Votre nom" value={formData.nom_expediteur} onChange={handleChange} required />
-                        <label className="form-label">Prénom</label>
+                        <label className="form-label">Prénom<span className="text-warning">*</span></label>
                         <input id="prenom" name="prenom_expediteur" type="text" className="form-control rounded-4 p-3" placeholder="Votre prénom" value={formData.prenom_expediteur} onChange={handleChange} required />
-                        <label className="form-label">Email</label>
+                        <label className="form-label">Email<span className="text-warning">*</span></label>
                         <input id="email" name="email_expediteur" type="email" className="form-control rounded-4 p-3" placeholder="Votre email" value={formData.email_expediteur} onChange={handleChange} required />
-                        <label className="form-label">Code Postal</label>
+                        <label className="form-label">Code Postal<span className="text-warning">*</span></label>
                         <input id="code_postal" name="code_postal" type="text" className="form-control rounded-4 p-3" placeholder="Votre code postal" value={formData.code_postal} onChange={handleChange} required />
-                        <label className="form-label">Objet</label>
+                        <label className="form-label">Objet<span className="text-warning">*</span></label>
                         <input id="objet" name="objet" type="text" className="form-control rounded-4 p-3" placeholder="Objet" value={formData.objet} onChange={handleChange} required />
-                        <label className="form-label">Message</label>
+                        <label className="form-label">Message<span className="text-warning">*</span></label>
                         <textarea id="message" name="message" className="form-control rounded-4 p-3" placeholder="Votre message..." value={formData.message} onChange={handleChange} required />
                     </div>
+                <div className="mendatory-input">
+                    <p className="text-warning">
+                        * Champs obligatoires
+                    </p>
+                </div>
                 </div>
                 <button className="btn btn-primary p-3 fw-bold" type="submit">Envoyer</button>
                 {success&&
-                    <p className="success-message mt-3">
+                    <p className="success-message alert-success mt-3">
                         Votre message a été envoyé avec succès. 
                     </p>
                 }

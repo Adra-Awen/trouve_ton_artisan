@@ -13,19 +13,19 @@ function Accueil(){
     const slides = [
         {
             image: recherche,
-            texte:"Choisir la catégorie dans le menu"
+            texte:"1. Choisir la catégorie dans le menu"
         },
         {
             image:categorie,
-            texte:"Choisir un artisan"
+            texte:"2. Choisir un artisan"
         },
         {
             image: poster,
-            texte:"Le contacter via le formulaire"
+            texte:"3. Le contacter via le formulaire"
         },
         {
             image: reception,
-            texte:"Une réponse sous 48 heures"
+            texte:"4. Une réponse sous 48 heures"
         },
     ];
 

@@ -25,7 +25,7 @@ function App() {
           <Route path="/fabrication" element={<Fabrication />} />
           <Route path="/alimentation" element={<Alimentation />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/:nom" element={<Artisan />} />
+          <Route path="/artisan/:nom" element={<Artisan />} />
           <Route path="/donnees-personnelles" element={<DonneesPersonnelles />} />
           <Route path="/accessibilite" element={<Accessibilite />} />
           <Route path="/cookies" element={<Cookies />} />
