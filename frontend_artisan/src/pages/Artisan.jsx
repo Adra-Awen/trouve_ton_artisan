@@ -121,15 +121,6 @@ function Artisan() {
                                     
                                 {/* Coordonnées de l'artisan */}
                                 <div className="contact-artisan card border-0 mt-3 text-start fw-bold">
-                                        <p>
-                                            <a 
-                                                className="mb-0 text-decoration-none"
-                                                href={artisan.email ? `mailto:${artisan.email}` : '#'}
-                                                target="_blank" 
-                                                rel="noopener noreferrer">
-                                                Email
-                                            </a>                            
-                                        </p>
                                     {artisan.web && (
                                         <p>
                                             <a 
