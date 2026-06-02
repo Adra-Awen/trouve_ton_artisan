@@ -1,16 +1,46 @@
-# React + Vite
+## DESCRIPTION
+Application web permettant de consulter et entrer en contact avec un réseau d'artisans professionnels dans la Région Auvergne-Rhône-Alpes.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projet réalisé dans le cadre de la formation DWWM - Centre Européen de Formation.
 
-Currently, two official plugins are available:
+## FONCTIONNALITES
+- Consultation de la liste des artisans
+- Affichage des détails de l'artisan
+- Formulaire de contact pour chaque artisan
+- Recherche d'artisan
+- Affichage par catégorie
+- GEstion des données via une API
+- Interface responsive
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## TECHNOLOGIES UTILISEES
+Front-end:
+- React
+- Vite
+- Bootstrap
+- SCSS
 
-## React Compiler
+Back-end:
+- Node.js
+- MySQL
+- Express + Sequlize
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Sécurité:
+- Helmet
+- Variables d'environnement
 
-## Expanding the ESLint configuration
+## INSTALLATIOn
+git clone https://github.com/votre-compte/site-artisan.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+npm install
+
+Back-end: node server.js
+Front-end: npm run dev
+
+Fichiers .env non versionnés sur GitHub.
+La procédure pour les fichiers .env est envoyé par e-mail.
+
+## HEBERGEMENT
+- Render
+https://trouve-ton-artisan-tw96.onrender.com/
+
+
